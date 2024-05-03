@@ -1,5 +1,5 @@
 %toggle between "assignment", "transfer", "expose" and "thesis"
-\documentclass[thesis]{naklatex}
+\documentclass[assignment]{naklatex}
 
 %import glossaries files
 \loadglsentries{frame/glossary.tex}
@@ -12,47 +12,28 @@
 
     % See settings/config for the fields
     \maketitle
-
-    \input{frame/lock-notice.tex}
     
     \hypersetup{pageanchor=true}
     \pagestyle{scrheadings}
     \frontmatter
     
-    %\input{frame/genderNeutralLanguage.tex}
-    \input{frame/abstract.tex}
-
-    \cleardoublepage
+    \input{frame/genderNeutralLanguage.tex}
+    
     \tableofcontents
     
-    \printglossaries
-    \cleardoublepage
-    \conditionalLoF
-    \conditionalLoT
-    \conditionalLoL
-
-    \setcounter{figure}{0}
-
-    \cleardoublepage
     \mainmatter
 
-    \input{pages/intro.tex}
-    \input{examples/comment.tex}
-    \input{examples/image.tex}
-    \input{examples/table.tex}
-    \input{examples/graphs.tex}
-    \input{examples/listing.tex}
-    \input{examples/references}
-    \input{examples/scale.tex}
-    
-    \input{pages/conclusion.tex}
+    \input{pages/01-einleitung}
+    \input{pages/02-vpn-protokolle/main}
+    \input{pages/03-sicherheitsaspekte-von-vpns/main}
+    \input{pages/04-vpn-anwendungen/main}
+    \input{pages/05-fazit-ausblick}
     
     \backmatter
     \printbibliography[title=Literaturverzeichnis]
 
-    \cleardoublepage
-    \appendix
-    \input{frame/appendix.tex}
+    %\appendix
+    %\input{frame/appendix.tex}
 
     \finishWork
     
