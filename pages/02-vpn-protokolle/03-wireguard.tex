@@ -1,1 +1,16 @@
 \section{WireGuard}
+
+WireGuard ist ein sehr modernes \gls{VPN}, welches darauf abzielt, ältere und weit verbreitete \gls{VPN} Technologien wie OpenVPN oder IPsec abzulösen. Dabei soll WireGuard nicht nur schneller sein als herkömmliche Lösungen, sondern auch einfacher und flexibler in der Einsetzung sein. \cite{Wireguard_Whitepaper}.
+
+\subsection{Grundidee}
+
+Ursprünglich wurde WireGuard speziell für den Linux-Kernel implementiert, um die bestmögliche Leistung zu erreichen. Durch eine direkte Integrierung in den Kernel, wurden zeitintensive Wechsel zwischen dem User-Space und Kernel-Space bei Systemaufrufen vermieden \cite{Wireguard_Whitepaper}. Damit WireGuard aber auch auf anderen Plattformen laufen kann, wurden auf Implementierungen im User-Space umgesetzt (CITE https://www.wireguard.com/xplatform/) um heute eine Vielzahl an Plattformen zu unterstützten (CITE https://www.wireguard.com/install/).
+
+\subsection{Architektur}
+
+\subsection{Kommunikationsablauf}
+
+\subsection{Protokoll und Verschlüsselung}
+
+Um eine höhere Performance zu erreichen, setzt WireGuard auf, im Vergleich zu OpenVPN und IPsec, moderne Kryptografie. Die wichtigsten Algorithmen, die zur Verschlüsselung verwendet werden, sind Curve25519 \cite{Wireguard_Curve25519} für den Schlüsselaustausch, ChaCha20 \cite{Wireguard_ChaCha20} für die Datenverschlüsselung und Poly1305 \cite{Wireguard_Poly1305} für die Authentifizierung.
+

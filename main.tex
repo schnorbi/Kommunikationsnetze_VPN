@@ -5,6 +5,7 @@
 \loadglsentries{frame/glossary.tex}
 \loadglsentries{frame/acronym.tex}
 
+
 \begin{document}
     \hypersetup{pageanchor=false}
     
@@ -18,8 +19,18 @@
     \frontmatter
     
     \input{frame/genderNeutralLanguage.tex}
-    
+    %\input{frame/abstract.tex}
+
+    \clearpage
     \tableofcontents
+    
+    \printglossaries
+    \clearpage
+    \conditionalLoF
+    \conditionalLoT
+    \conditionalLoL
+
+    \setcounter{figure}{0}
     
     \mainmatter
 
@@ -32,8 +43,9 @@
     \backmatter
     \printbibliography[title=Literaturverzeichnis]
 
-    %\appendix
-    %\input{frame/appendix.tex}
+    \clearpage
+    \appendix
+    \input{frame/appendix.tex}
 
     \finishWork
     

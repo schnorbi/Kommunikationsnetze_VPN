@@ -1,7 +1,7 @@
 \ProvidesClass{naklatex}
 
 \LoadClass[
-	%oneside, % If commented out its two-sided
+	oneside, % If commented out its two-sided
 	bibliography=totoc,
 	index=totoc,
 	listof=totoc,
