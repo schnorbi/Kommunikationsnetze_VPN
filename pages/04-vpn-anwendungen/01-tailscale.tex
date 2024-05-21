@@ -1,24 +1,24 @@
-\section{\gl{VPN} für \acrfull{SDN} Lösungen} \label{tailscale}
+\section{\gls{VPN} für \acrfull{SDN} Lösungen} \label{tailscale}
 
-Ein virtuelles privates Netzwerk (VPN) ist eine Technologie, die sichere und verschlüsselte Verbindungen über öffentliche Netzwerke ermöglicht. Diese Netzwerke werden häufig verwendet, um Remote-Benutzern sicheren Zugriff auf ein Unternehmensnetzwerk zu gewähren oder um verschiedene Standorte eines Unternehmens miteinander zu verbinden. VPNs bieten Datenschutz, Datenintegrität und Authentizität der übertragenen Informationen.
+Ein \gls{VPN} ist eine Technologie, die sichere und verschlüsselte Verbindungen über öffentliche Netzwerke ermöglicht. Diese Netzwerke werden häufig verwendet, um Remote-Benutzern sicheren Zugriff auf ein Unternehmensnetzwerk zu gewähren oder um verschiedene Standorte eines Unternehmens miteinander zu verbinden. VPNs bieten Datenschutz, Datenintegrität und Authentizität der übertragenen Informationen.
 
-Software-Defined Networking (SDN) hingegen ist ein Ansatz zur Netzwerkverwaltung, der das Netzwerk von der physischen Hardware abstrahiert. Durch SDN können Netzwerkkontrollen programmatisch verwaltet und optimiert werden, was eine flexible, zentrale Steuerung des Netzwerks ermöglicht. SDN trennt die Datenebene (die eigentliche Datenübertragung) von der Steuerungsebene (der Netzwerkmanagementlogik), was eine dynamischere und effizientere Netzwerkverwaltung erlaubt.
+\gls{SDN} hingegen ist ein Ansatz zur Netzwerkverwaltung, der das Netzwerk von der physischen Hardware abstrahiert. Durch \gls{SDN} können Netzwerkkontrollen programmatisch verwaltet und optimiert werden, was eine flexible, zentrale Steuerung des Netzwerks ermöglicht. \gls{SDN} trennt die Datenebene (die eigentliche Datenübertragung) von der Steuerungsebene (der Netzwerkmanagementlogik), was eine dynamischere und effizientere Netzwerkverwaltung erlaubt. \cite{SDN_Survey}
 
-\subsection{Zusammenspiel von VPN und SDN}
+\subsection{Zusammenspiel von \gls{VPN} und \gls{SDN}}
 
-Die Kombination von VPNs und SDN bietet zahlreiche Vorteile für moderne Netzwerklösungen. Während VPNs eine sichere Kommunikation gewährleisten, ermöglicht SDN eine flexible und zentrale Steuerung dieser Verbindungen. Diese Synergie kann Netzwerke sicherer, effizienter und leichter zu verwalten machen.
+Die Kombination von \gls{VPN}s und \gls{SDN} bietet zahlreiche Vorteile für moderne Netzwerklösungen. Während \gls{VPN}s eine sichere Kommunikation gewährleisten, ermöglicht \gls{SDN} eine flexible und zentrale Steuerung dieser Verbindungen. Dieses Zusammenspiel kann Netzwerke sicherer, effizienter und leichter zu verwalten machen. 
 
-1. **Zentrale Verwaltung und Kontrolle**: Mit SDN können Netzwerkadministratoren VPN-Verbindungen zentral und dynamisch verwalten. Dies erleichtert die Konfiguration, Überwachung und Anpassung von VPN-Tunneln in Echtzeit, was besonders nützlich in großen, verteilten Netzwerken ist.
-2. **Automatisierung und Orchestrierung**: SDN ermöglicht die Automatisierung vieler Netzwerkaufgaben. VPN-Verbindungen können automatisch konfiguriert und angepasst werden, basierend auf vordefinierten Richtlinien und Echtzeit-Netzwerkbedingungen. Dies reduziert den manuellen Aufwand und minimiert das Risiko menschlicher Fehler.
-3. **Sicherheit und Segmentierung**: SDN ermöglicht eine feinere Kontrolle über die Netzwerksegmentierung und Sicherheitsrichtlinien. VPN-Traffic kann gezielt überwacht und geschützt werden, indem spezifische Sicherheitsrichtlinien auf verschiedene Netzwerksegmente angewendet werden. Dies erhöht die Sicherheit, indem es den Datenverkehr granular segmentiert und isoliert.
-4. **Standortunabhängiger Zugriff**: Durch den verschlüsselten Datenverkehr und dem kontrollierten Zugriff eine VPN Verbindung kann der Zugriff in die das Netzwerk unabhängig von dem Standort des jeweiligen Gerätes passieren. So können sich beispielsweise Mitarbeiter aus dem Home-Office ohne Probleme in das Unternehmensnetzwerk einwählen und gesichert auf freigegebene Ressourcen zugreifen.
+\begin{enumerate}
+    \item \textbf{Zentrale Verwaltung und Kontrolle}: Mit \gls{SDN} können Netzwerkadministratoren VPN-Verbindungen zentral und dynamisch verwalten. Dies erleichtert die Konfiguration, Überwachung und Anpassung von VPN-Tunneln in Echtzeit, was besonders nützlich in großen, verteilten Netzwerken ist.
+    \item \textbf{Automatisierung und Orchestrierung}: \gls{SDN} ermöglicht die Automatisierung vieler Netzwerkaufgaben. VPN-Verbindungen können automatisch konfiguriert und angepasst werden, basierend auf vordefinierten Richtlinien und Echtzeit-Netzwerkbedingungen. Dies reduziert den manuellen Aufwand und minimiert das Risiko menschlicher Fehler.
+    \item \textbf{Sicherheit und Segmentierung}: \gls{SDN} ermöglicht eine feinere Kontrolle über die Netzwerksegmentierung und Sicherheitsrichtlinien. VPN-Traffic kann gezielt überwacht und geschützt werden, indem spezifische Sicherheitsrichtlinien auf verschiedene Netzwerksegmente angewendet werden. Dies erhöht die Sicherheit, indem es den Datenverkehr granular segmentiert und isoliert.
+    \item \textbf{Standortunabhängiger Zugriff}: Durch den verschlüsselten Datenverkehr und dem kontrollierten Zugriff eine VPN Verbindung kann der Zugriff in die das Netzwerk unabhängig von dem Standort des jeweiligen Gerätes passieren. So können sich beispielsweise Mitarbeiter aus dem Home-Office ohne Probleme in das Unternehmensnetzwerk einwählen und gesichert auf freigegebene Ressourcen zugreifen.
+\end{enumerate}
 
 \subsection{Implementierung}
 
-Eine populäre Lösung auf dem Markt ist das Produkt von Tailscale, welches Wireguard VPN-Verbindungen benutzt um zwischen den einzelnen Teilnehmern der SDN-Umgebung zu kommunizieren.
+Eine populäre Lösung auf dem Markt ist das Produkt von Tailscale, welches Wireguard VPN-Verbindungen benutzt um die Kommunikation innerhalb der \gls{SDN}-Umgebung zu verschlüssel und zu steuern.
 
-Ein zentraler Bestandteil dieser Lösung ist der sogenannte Controller. Dieser ist für die Authentifizierung jeweiliger Geräte zuständig und verwaltet die Konfigurationen der jeweiligen SDN-Umgebung. Authentifiziert sich ein Gerät am Controller, bekommt dieser eine Konfiguration ausgestellt und kann sich mit einer entsprechenden VPN-Konfiguration auf den entsprechenden Endpunkten einwählen.
+Ein zentraler Bestandteil dieser Lösung ist der sogenannte Koordinator. Dieser ist für die Authentifizierung jeweiliger Geräte zuständig und verwaltet die Konfigurationen der jeweiligen \gls{SDN}-Umgebung. Authentifiziert sich ein Gerät am Controller, bekommt dieser eine Konfiguration ausgestellt und kann sich mit einer entsprechenden VPN-Konfiguration auf den entsprechenden Endpunkten einwählen. Dies ermöglich die Verwendung von Authentifizierungsmethoden abseits von dem VPN-Protokoll. \cite{tailscale202_how_it_works}
 
-Diese Art der Verwaltung der Zugänge erlaubt eine kontinuierliche Überprüfung der jeweiligen Zugänge um beispielsweise ein Zero-Trust-Konzept einzuführen. Dadurch ist der Zugriff nicht nur durch die Anwendung von VPN-Verbindungen der Datenverkehr gesichert, sondern Geräte müssen ständig die 
-
-\cite{tailscale202_how_it_works}
+Diese Art der Verwaltung der Zugänge erlaubt eine kontinuierliche Überprüfung der jeweiligen Zugänge um beispielsweise ein Zero-Trust-Konzept einzuführen. Dadurch ist der Zugriff nicht nur durch die Anwendung von VPN-Verbindungen und der gesicherte Datenverkehr gewährleistet, sondern Geräte müssen ständig ihre Authentifizierung und Autorisierung bestätigen, um Zugang zu gewähren, was zusätzliche Sicherheit bietet. \cite{Tailscale_ZeroTrust, NIST_ZeroTrust}

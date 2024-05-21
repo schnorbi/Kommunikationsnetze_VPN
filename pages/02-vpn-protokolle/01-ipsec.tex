@@ -1,16 +1,29 @@
-\section{IPsec} \label{ipsec}
+\section{IPSec} \label{ipsec}
 
-- Grundidee
-- Ursprung
-- Verbreitung am Markt
+\acrfull{IPSec} ist eins der weltweit am meisten verbreitetsten \gls{VPN}-Protokolle. Das Protokoll wurde 1996 von der \gls{IETF} standardisiert und als \gls{RFC} Standard veröffentlicht. Die Grundidee von \gls{IPSec} besteht darin, Datenpakete zu verschlüsseln und zu authentifizieren, um die Vertraulichkeit, Integrität und Authentizität der übertragenen Informationen zu gewährleisten.
 
 \subsection{Architektur}
+\gls{IPSec} unterstützt zwei unterschiedliche Übertragungsmodi, je nach Anwendungsfall eignet sich der Transport-Modus oder der Tunnel-Modus mehr oder weniger. Der Transportmodus, bei welchem die \gls{IP}-Header der Ursprungspakete übernommen werden und nur der Paket-Inhalt verschlüsselt wird, wird eingesetzt, wenn es sich bei den Tunnelendpunkten auch um die Kommunikationsendpunkte handelt. Dies ist zum Beispiel bei der direkten Kommunikation zwischen zwei Clients der Fall. Der Tunnel-Modus hingegen eignet sich für den Paket-Transport über Netzwerke hinweg. Dabei wird das gesamte \gls{IP}-Paket mitsamt dem \gls{IP}-Header verschlüsselt.
+
+Das Protokoll arbeitet auf der Netzwerkschicht (Layer 3) des \gls{OSI} und sorgt damit für eine sichere Übertragung von Daten durch Verschlüsselung und Authentifizierung.
 
 \subsection{Protokoll und Verschlüsselung}
+\gls{IPSec} beinhaltet drei Protokolle, welche für die Verschlüsselung, Authentisierung und Schlüsselverwaltung zuständig sind.
 
 \begin{enumerate}
-    \item \textbf{Daniel Oltmanns}: Abstract, \ref{wireguard}, \ref{sicherheitsaspekte}, \ref{tailscale}, \ref{iot}, \ref{fazit}
-    \item \textbf{Corbian Reiser}: \ref{introduction}, \ref{intro-protokolle}, \ref{openvpn}, \ref{ipsec}, \ref{vpn-home}, \ref{ano-zensur}, \ref{fazit}, 
+    \item \textbf{\gls{AH}}: Das \gls{AH}-Protokoll sorgt für die Authentisierung der Daten, indem dem Paket ein \gls{AH}-Header hinzugefügt wird. Eine Verschlüsselung der Daten besteht hierbei noch nicht.
+    \item \textbf{\gls{ESP}}: Das \gls{ESP}-Protokoll sorgt neben einer Authentisierung des Pakets auch für eine Verschlüsselung. Dabei wird dem Paket ebenfalls ein \gls{AH}-Header angehängt und zusätzlich die Paketdaten verschlüsselt.
+    \item \textbf{\gls{IKE}}: Um zum Beispiel Daten zu verschlüsseln und auf der Gegenseite diese wieder zu entschlüsseln, benötigt \gls{IPSec} \gls{SA}-Schlüssel, welche allen Teilnehmern bekannt sind. \gls{SA}-Schlüssel sind ein Teil der \acrfull{SA}, welche die Beziehung zwischen zwei oder mehr Entitäten sowie die zum Schutz ausgetauschten Daten, benutzen Verfahren oder Parameter beinhaltet. Die \gls{SA}-Schlüssel können in vielen \gls{IPSec} Implementierungen statisch gesetzt werden. Zur dynamischen Aushandlung hingegen wird \acrfull{IKE} verwendet, welches auf dem \gls{ISAKMP} basiert.
+
+    Die \gls{SA}-Schlüssel werden in zwei Phasen ausgehandelt. In der ersten Phase wird eine \gls{ISAKMP} Security Association ausgehandelt, über welche ein verschlüsselter Tunnel aufgebaut wird. Über diesen Tunnel können nun in der zweiten Phase \gls{SA}s und Schlüssel ausgetauscht werden, mit welchen \gls{IPSec} arbeiten kann.
 \end{enumerate}
 
+Der \gls{IPSec} Standard (\gls{RFC} 2401) sieht eine Implementation von zwei Datenbanken vor, eine \gls{SPD} und eine \gls{SAD}. In der \gls{SPD} werden  Sicherheitsvorgaben definiert, wie mit eingehenden \gls{IP}-Paketen umgegangen werden soll. So kann abhängig von zum Beispiel der Quelladresse entschieden werden, ob das Paket verworfen oder weitergeleitet werden soll. Alternativ ist es auch Möglich zu definieren, dass eine Verschlüsselung ausgehandelt werden soll. Ist dies der Fall, wird mithilfe des \gls{IKE}-Protokolls nach Vorgabe der \gls{SPD} ein \gls{SA}-Schlüssel ausgehandelt und samt des restlichen \gls{SA}-Daten in der \gls{SAD} gespeichert.
+
+In der Praxis verzichten viele Implementationen auf eine Datenbank und setzten aus Performancegründen auf geordnete Listen, welche im Hauptspeicher abgelegt werden.
+
 \subsection{Implementierung}
+Die meisten gängigen Betriebssysteme, wie Windows, Linux und macOS, bieten integrierte Unterstützung für \gls{IPSec}. Diese Betriebssysteme stellen Tools und Schnittstellen zur Verfügung, um \gls{IPSec}-Verbindungen zu konfigurieren und zu verwalten. Router, Firewalls und andere Netzwerkgeräte unterstützen oft \gls{IPSec}, um sichere Site-to-Site-\gls{VPN}s oder Remote-Access-\gls{VPN}s zu ermöglichen. Zum Beispiel bietet AVM in ihren Routern eine webbasierte Konfigurationsschnittstelle, um IPsec-Verbindungen einzurichten und zu überwachen.
+
+Trotz der breiten Unterstützung kann die Implementierung von \gls{IPSec} Herausforderungen mit sich bringen, insbesondere bei der Kompatibilität zwischen verschiedenen Geräten und Softwareversionen. Die korrekte Konfiguration der \gls{SPD} und die Verwaltung der Schlüssel sind entscheidend, um die Sicherheit und Leistung der \gls{IPSec}-Verbindungen zu gewährleisten.
+

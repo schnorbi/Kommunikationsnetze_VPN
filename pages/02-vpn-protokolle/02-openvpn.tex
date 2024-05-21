@@ -1,5 +1,5 @@
 \section{OpenVPN} \label{openvpn}
-OpenVPN ist eine Open-Source-Protokoll, welches sich über viele Jahre im Markt etabliert hat. 2001 wurde OpenVPN von James Yonan entwickelt und veröffentlicht, mit dem Ziel eine sichere, anpassbare und benutzerfreundliche \gls{VPN}-Lösung zu schaffen, welche als Open-Source-Projekt jedem zur Verfügung steht. Neben der Möglichkeit die Software bei Bedarf anzupassen trägt die Offenheit des Quellcodes zur Sicherheit des Protokolls bei, da so Sicherheitslücken schneller identifiziert und behoben werden.
+OpenVPN ist ein Open-Source-Protokoll, welches sich über viele Jahre im Markt etabliert hat. Das Protokoll wurde 2001 von James Yonan entwickelt und veröffentlicht, mit dem Ziel eine sichere, anpassbare und benutzerfreundliche \gls{VPN}-Lösung zu schaffen, welche als Open-Source-Projekt jedem zur Verfügung steht. Neben der Möglichkeit, die Software bei Bedarf anzupassen, trägt die Offenheit des Quellcodes zur Sicherheit des Protokolls bei, da so Sicherheitslücken schneller identifiziert und behoben werden.
 
 Seit dem Release bietet OpenVPN damit, sowohl privaten als auch kommerziellen Anwendern, ein kostengünstige und flexible Lösung für sicheren Netzwerkverkehr.
 
@@ -8,16 +8,16 @@ Die Architektur von OpenVPN basiert auf einem Client-Server-Modell. Der OpenVPN-
 
 Ein wesentlicher Bestandteil der OpenVPN-Architektur ist die Verwendung virtueller Netzwerkschnittstellen. Diese Schnittstellen, auch TUN/TAP-Interfaces genannt, ermöglichen die Übertragung von Netzwerkpaketen durch den verschlüsselten Tunnel. TUN-Interfaces arbeiten auf der Netzwerkschicht (Layer 3) und übertragen \gls{IP}-Pakete, während TAP-Interfaces auf der Datenverbindungsschicht (Layer 2) arbeiten und Ethernet-Frames übertragen. Diese Flexibilität erlaubt es OpenVPN, sowohl \gls{IP}- als auch Nicht-\gls{IP}-Protokolle zu unterstützen.
 
-OpenVPN unterstützt sowohl das \gls{UDP} als auch \gls{TCP}. Dies ist von großen Vorteil, da es dadurch flexibler ist und sowohl für schnelle Verbindungen (\gls{UDP}) als auch für zuverlässige Verbindungen (\gls{TCP}) eingesetzt werden kann. OpenVPN verwendet dabei im \gls{TCP}-Mode den Port 443, wodurch einfache Firewalls relativ zuverlässig umgangen werden können. 
+OpenVPN unterstützt sowohl das \gls{UDP} als auch \gls{TCP}. Dies ist von großem Vorteil, da es dadurch flexibler ist und sowohl für schnelle Verbindungen (\gls{UDP}) als auch für zuverlässige Verbindungen (\gls{TCP}) eingesetzt werden kann. OpenVPN verwendet dabei im \gls{TCP}-Mode den Port 443, wodurch einfache Firewalls relativ zuverlässig umgangen werden können. 
 
 \subsection{Protokoll und Verschlüsselung}
-OpenVPN verwendet die OpenSSL-Bibliothek um die Verschlüsselung, Authentifizierung und Integrität der Daten sicherzustellen. Dadurch unterstützt OpenVPN eine Vielzahl von Verschlüsselungsalgorithmen, darunter \gls{AES}, Blowfish und viele andere.
+OpenVPN verwendet die OpenSSL-Bibliothek, um die Verschlüsselung, Authentifizierung und Integrität der Daten sicherzustellen. Dadurch unterstützt OpenVPN eine Vielzahl von Verschlüsselungsalgorithmen, darunter \gls{AES}, Blowfish und viele andere.
 
-Das Protokoll von OpenVPN basiert auf dem SSL/TLS-Protokoll, was es ermöglicht eine sichere Kommunikation zwischen einem Client und Server aufzubauen. Dabei wird zunächst eine sichere TLS-Verbindung aufgebaut, um den Austausch von Schlüsseln und die Authentifizierung durchzuführen. 
+Das Protokoll von OpenVPN basiert auf dem SSL/TLS-Protokoll, was es ermöglicht, eine sichere Kommunikation zwischen einem Client und Server aufzubauen. Dabei wird zunächst eine sichere TLS-Verbindung aufgebaut, um den Austausch von Schlüsseln und die Authentifizierung durchzuführen. 
 
 Die Authentifizierung in OpenVPN kann über die Verwendung von Zertifikaten, \gls{PSKs} oder Benutzernamen und Passwörtern stattfinden. Die häufigste Methode ist die Verwendung von Zertifikaten, die von einer \gls{CA} ausgestellt werden. Diese Zertifikate gewährleisten, dass sowohl Client als auch Server vertrauenswürdige Identitäten besitzen.
 
-Um ein Datenpaket von einer Applikation zu einem \gls{VPN}-Server zu übertragen sind folgende Schritte notwendig:
+Um ein Datenpaket von einer Applikation zu einem \gls{VPN}-Server zu übertragen, sind folgende Schritte notwendig:
 
 \begin{enumerate}
     \item Zunächst wird das Paket von der Applikation an das virtuelle TUN-Interface übergeben.
@@ -27,4 +27,4 @@ Um ein Datenpaket von einer Applikation zu einem \gls{VPN}-Server zu übertragen
 \end{enumerate}
 
 \subsection{Implementierung}
-OpenVPN arbeitet im User-Space, da es nur Zugriff auf die Netzwerkadapter benötigt. Dadurch, dass OpenVPN auf Anwendungsebene läuft und somit keine tiefgreifenden Eingriffe in das Betriebssystem erfordert und nur die Unterstützung für TUN/TAP-Interfaces benötigt kann es auf fast allen Betriebssystemen laufen. Darunter fallen Linux, Free/Open/NetBSD, Solaris, AIX, Windows oder MacOS aber auch iOS oder Android.
+OpenVPN arbeitet im User-Space, da es nur Zugriff auf die Netzwerkadapter benötigt. Dadurch, dass OpenVPN auf Anwendungsebene läuft und somit keine tiefgreifenden Eingriffe in das Betriebssystem erfordert und nur die Unterstützung für TUN/TAP-Interfaces benötigt, kann es auf fast allen Betriebssystemen laufen. Darunter fallen Linux, Free/Open/NetBSD, Solaris, AIX, Windows oder MacOS, aber auch iOS oder Android.

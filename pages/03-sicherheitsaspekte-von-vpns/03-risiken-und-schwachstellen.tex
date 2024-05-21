@@ -1,9 +1,13 @@
 \section{Risiken und Schwachstellen}
 
-Trotz der vielen Sicherheitsvorteile haben \gl{VPN}s auch ihre Risiken und Schwachstellen. Ist beispielsweise der \gl{VPN}-Server, auf dem man sich einwählt, kompromittiert, so bringt auch die Verschlüsselung und Authentifizierung keinen Schutz vor Angreifern. 
+Trotz der vielen Sicherheitsvorteile haben \gls{VPN}s auch ihre Risiken und Schwachstellen. Ist beispielsweise der \gls{VPN}-Server, auf dem man sich einwählt, kompromittiert, so bringt auch die Verschlüsselung und Authentifizierung keinen Schutz vor Angreifern. 
 
-Technische Schwachstellen in \gl{VPN}-Protokollen oder Implementierungen können ebenfalls ein Risiko darstellen. Ältere Protokolle wie \gls{PPTP} gelten als unsicher und sollten vermieden werden \cite{BSI_VPN_10}. Selbst bei moderneren Protokollen wie Open\gl{VPN} können falsch konfigurierte Server oder veraltete Softwareversionen zu Sicherheitslücken führen \cite{OpenVPN_Security_Advisories}.
+Technische Schwachstellen in \gls{VPN}-Protokollen oder Implementierungen können ebenfalls ein Risiko darstellen. Ältere Protokolle wie \gls{PPTP} gelten als unsicher und sollten vermieden werden \cite{BSI_VPN_10}. Selbst bei moderneren Protokollen wie Open\gls{VPN} können falsch konfigurierte Server oder veraltete Softwareversionen zu Sicherheitslücken führen \cite{OpenVPN_Security_Advisories}.
 
-Zusätzlich können \gl{VPN}s durch gezielte Angriffe wie DNS-Spoofing oder IP-Leaks kompromittiert werden. Angreifer können versuchen, den Datenverkehr umzuleiten oder die echte IP-Adresse des Benutzers zu enthüllen. Regelmäßige Sicherheitsupdates und korrekt konfigurierte Einstellungen sind daher entscheidend, um diese Risiken zu minimieren. \cite{Lyu2022}
+Zusätzlich können \gls{VPN}s durch gezielte Angriffe wie DNS-Spoofing oder IP-Leaks kompromittiert werden. Angreifer können versuchen, den Datenverkehr umzuleiten oder die echte IP-Adresse des Benutzers zu enthüllen. Regelmäßige Sicherheitsupdates und korrekt konfigurierte Einstellungen sind daher entscheidend, um diese Risiken zu minimieren. \cite{Lyu2022}
 
-Abschließend lässt sich sagen, dass \gl{VPN}s, wenn sie richtig eingesetzt werden, einen hohen Grad an Sicherheit und Datenschutz bieten können. Es ist jedoch wichtig, sich der potenziellen Risiken bewusst zu sein und entsprechende Maßnahmen zu ergreifen, um diese zu minimieren.
+Ein grundlegendes Risiko sind jedoch Datenlecks. Diese können leicht durch eine Fehlkonfiguration auftreten und führen zu Kommunikation außerhalb der gesicherten \gls{VPN}-Verbindung. Das Problem hier ist die fehlende Transparenz gegenüber des Benutzers, wodurch Datenlecks oftmals viel zu spät auffallen und behoben werden können.
+
+Abschließend lässt sich sagen, dass \gls{VPN}s, wenn sie richtig eingesetzt werden, einen hohen Grad an Sicherheit und Datenschutz bieten können. Es ist jedoch wichtig, sich der potenziellen Risiken bewusst zu sein und entsprechende Maßnahmen zu ergreifen, um diese zu minimieren.
+
+%  Zusätzlich sollte das \gls{VPN} korrekt konfiguriert werden und die Software stets auf dem aktuellen Stand gehalten werden, um sich vor Datenlecks oder Schwachstellen zu schützen. % Removed due to overflow to new page
