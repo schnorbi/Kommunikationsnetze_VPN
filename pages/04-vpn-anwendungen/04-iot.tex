@@ -1,5 +1,18 @@
-\section{IoT - Daten sicher austauschen in einem verschlüsselten Netzwerk}
+\section{Sichere Kommunikation und Verwaltung für \gls{IoT}-Geräte} \label{iot}
 
-- Einwählen von Sensoren in ein privates Umfeld via VPN (Verschlüsselung von Standort bis Cloud)
-- Verwaltung der Sensoren in einem zentralen Umfeld ohne komplexe Kundenfreigaben
-- Vereinfachte Implementierung beim Kunden. Nur ein Netzwerkanschluss und eine einzige Freigabe in der Firewall.
+\gls{IoT} ist in den letzten Jahren ein immer weiter wachsendes Thema und die Anzahl an \gls{IoT}-Geräten nimmt stetig zu \cite{Statista_IoT_Devices_2030}. Die zunehmende Vernetzung und die damit einhergehende Vielzahl an vernetzten Geräten eröffnen nicht nur neue Möglichkeiten, sondern stellen auch erhebliche Sicherheitsherausforderungen dar.
+
+Um die Kommunikation zwischen \gls{IoT}-Geräten und den entsprechenden Management-Servern abzusichern, spielen \gls{VPN}s eine entscheidende Rolle. \gls{VPN} bieten eine sichere, verschlüsselte Verbindung, die verhindert, dass sensible Daten während der Übertragung abgefangen oder manipuliert werden können. Zusätzlich können sich die entsprechenden Geräte in ein eigenes Netzwerk einwählen, von dem aus alle Geräte gemeinsam und sicher administriert werden können. 
+
+Aber nicht nur der verschlüsselte Datenverkehr ist in diesem Bereich besonders relevant, sondern auch die gesteuerte Zugriffskontrolle. So können beispielsweise Zugänge für Kunden angelegt werden, damit diese auf ihre Geräte zugreifen können und neue Geräte müssen erst durch den Administrator angelegt werden, um sich einzuwählen.
+
+Um die \gls{IoT}-Geräte in das Netzwerk einzuwählen, kann man grundlegend zwei verschiedene Ansätze wählen. Man nutzt die integrierte \gl{VPN} Funktionalität des jeweiligen Gerätes oder man bündelt den Datenverkehr von mehreren \gls{IoT}-Geräten mithilfe eines Gateways, welches für eine gemeinsame \gl{VPN} Verbindung zuständig ist.
+
+\subsection{Integrierte \gl{VPN}}
+
+
+Die \gls{IoT}-Geräten können sich je nach Infrastruktur, direkt selbst in das \gls{VPN} einwählen, beispielsweise ein Mikrocontroller mit ESPHome der sich mit WireGuard auf den \gls{VPN}-Server einwählt \cite{ESPHome_Wireguard}
+
+\subsection{Gateway-Prinzip}
+
+, oder man platziert ein lokales Gateway, über welches sich die Geräte in das entsprechende Netz einwählen können, ohne sich selbst in das \gls{VPN} einzuloggen \cite{IoT_OpenVPN_Raspberry}.
