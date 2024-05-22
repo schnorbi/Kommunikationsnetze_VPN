@@ -4,7 +4,7 @@
     url={https://www.statista.com/statistics/1360289/financial-damage-cyber-crimes-germany/},
     urldate={2024-05-19},
     year={2023},
-    month={September}
+    month={9}
 }
 
 @online{Filed_cybercrime_cases_Germany_2022,
@@ -13,10 +13,71 @@
     url={https://www.statista.com/statistics/1360141/cyber-crime-cases-recorded-police-germany/},
     urldate={2024-05-19},
     year={2023},
-    month={Juli}
+    month={7}
 }
 
-@online{Wie_funktioniert_ein_Virtual_Private_Network_VPN,
+@online{The_History_of_OpenVPN,
+    organization={OpenVPN},
+    title={The History of OpenVPN},
+    url={https://openvpn.net/blog/the-history-of-openvpn/},
+    urldate={2024-05-19},
+    date={2021-06-19}
+}
+
+@misc{VPN_with_FRITZ!Box,
+    organization={AVM},
+    title={VPN with FRITZ!Box},
+    url={https://en.avm.de/service/vpn/},
+    urldate={2024-05-19},
+}
+
+@techreport{RFC2401,
+    series =    {Request for Comments},
+    number =    2401,
+    howpublished =  {RFC 2401},
+    publisher = {RFC Editor},
+    doi =       {10.17487/RFC2401},
+    url =       {https://www.rfc-editor.org/info/rfc2401},
+    author =    {Ran Atkinson and Stephen Kent},
+    title =     {{Security Architecture for the Internet Protocol}},
+    pagetotal = 66,
+    year =      1998,
+    month =     nov,
+    abstract =  {This memo specifies the base architecture for IPsec compliant systems. {[}STANDARDS-TRACK{]}},
+}
+
+@misc{Guide_to_IPsec_VPNs,
+  author = {Elaine Barker and Quynh Dang and Sheila Frankel and Karen Scarfone and Paul Wouters},
+  title = {Guide to IPsec VPNs},
+  year = {2020},
+  month = {6},
+  publisher = {Special Publication (NIST SP), National Institute of Standards and Technology, Gaithersburg, MD},
+  doi = {https://doi.org/10.6028/NIST.SP.800-77r1},
+  language = {en},
+}
+
+
+@BOOK{Mastering_OpenVPN,
+  title     = "Mastering OpenVPN",
+  author    = "Crist, Eric F and Keijser, Jan Just",
+  publisher = "Packt Publishing",
+  series    = "Community experience distilled",
+  date = {2015-08-28},
+  address   = "Birmingham, England",
+  language  = "en",
+  isbn = {9781783553143}
+}
+
+@BOOK{Ipsec_VPN_Design,
+  title={IPSec VPN Design},
+  author={Bollapragada, V. and Khalid, M. and Wainner, S.},
+  isbn={9780134384160},
+  series={Networking Technology},
+  year={2005},
+  publisher={Pearson Education}
+}
+
+@misc{Wie_funktioniert_ein_Virtual_Private_Network_VPN,
     organization={Bundesamt für Sicherheit in der Informationstechnik},
     title={Wie funktioniert ein Virtual Private Network (VPN)?},
     url={https://www.bsi.bund.de/DE/Themen/Verbraucherinnen-und-Verbraucher/Informationen-und-Empfehlungen/Cyber-Sicherheitsempfehlungen/Router-WLAN-VPN/Virtual-Private-Networks-VPN/virtual-private-networks-vpn_node.html},
@@ -30,10 +91,35 @@
     url={https://nordvpn.com/de/blog/vpn-protokolle/},
     urldate={2024-05-19},
     year={2021},
-    month={Dezember}
+    month={12}
 }
 
-@online{Wireguard_Whitepaper,
+@online{OpenVPN_explained,
+    organization={NordVPN},
+    author={Laura Klusaitė},
+    title={OpenVPN explained: Definition, how it works, and safety},
+    url={https://nordvpn.com/de/blog/what-is-openvpn/},
+    urldate={2024-05-19},
+    date={2023-11-29}
+}
+
+@misc{OpenVPN_Changelogs,
+    title={OpenVPN Changelogs},
+    url={https://github.com/OpenVPN/openvpn2-historical-cvs/blob/d32aa83c2adc6f9fb70e2f0cc32c344f4864e95d/CHANGES#L20},
+    urldate={2024-05-19},
+}
+
+@online{What_is_OpenVPN_protocol,
+    organization={NordLayer},
+    author={Laura Klusaitė},
+    title={What is OpenVPN protocol?},
+    url={https://nordlayer.com/learn/vpn/openvpn/},
+    urldate={2024-05-19},
+    year={2023},
+    month={11}
+}
+
+@misc{Wireguard_Whitepaper,
     title={WireGuard: Next Generation Kernel Network Tunnel},
     author={Jason A. Donenfeld},
     url={https://www.wireguard.com/papers/wireguard.pdf},
@@ -49,7 +135,7 @@
 }
 
 @online{Wireguard_ChaCha20,
-    title={WireGuard: Next Generation Kernel Network Tunnel},
+    title={ChaCha, a variant of Salsa20},
     author={Daniel J. Bernstein},
     url={https://cr.yp.to/chacha/chacha-20080128.pdf},
     urldate={2024-05-14},
@@ -150,19 +236,12 @@
     author={Werner Beckmann},
     url={https://nordvpn.com/de/blog/was-ist-nordlynx/},
     urldate={2024-05-15},
-    date={Feb 29, 2024}
+    date={2024-02-29}
 }
 
 @misc{Tailscale,
     title={Tailscale · Best VPN Service for Secure Networks},
     url={https://tailscale.com/},
-    urldate={2024-05-15},
-    date={}
-}
-
-@misc{ZeroTier,
-    title={ZeroTier - Global Area Networking},
-    url={https://www.zerotier.com/},
     urldate={2024-05-15},
     date={}
 }
@@ -192,6 +271,13 @@
     url={https://de.statista.com/statistik/daten/studie/1420315/umfrage/anzahl-der-iot-geraete-weltweit/},
     urldate={2024-05-19},
     date={2023-07-01}
+}
+
+@misc{NordVPN_Was_ist_eine_VPN,
+    organization={NordVPN},
+    title={Was ist ein VPN?},
+    url={https://nordvpn.com/de/what-is-a-vpn/},
+    urldate={2024-05-19}
 }
 
 @misc{BSI_VPN_10,
@@ -229,12 +315,56 @@
     date = {}
 }
 
-@misc{NordVPN_KillSwitch,
-    title={NordVPNs automatischer Kill Switch},
-    url={https://nordvpn.com/de/features/vpn-kill-switch/},
-    urldate={2024-05-16},
-    date = {}
+@INPROCEEDINGS{6128478,
+  author={Ding, Feng and Yang, Zhiqing and Chen, Xuelong and Guo, Jianfeng},
+  booktitle={2011 Fourth International Symposium on Parallel Architectures, Algorithms and Programming}, 
+  title={Effective Methods to Avoid the Internet Censorship}, 
+  year={2011},
+  volume={},
+  number={},
+  pages={67-71},
+  keywords={Internet;IP networks;Fires;Roads;Virtual private networks;Videos;Servers;Internet Censorship;break;web;proxy pool;Multi-encoding},
+  doi={10.1109/PAAP.2011.54}
 }
+
+@inproceedings{jeliskoski2018securing,
+  title={Securing a Home Network by Using Raspberry Pi as a VPN Gateway},
+  author={Jeliskoski, Bogdan and Stojcevska, Biljana and Bozinovski, Adrijan},
+  booktitle={International Conference on Informatics and Information Technologies},
+  volume={15},
+  pages={129--134},
+  year={2018}
+}
+
+@misc{Tor,
+  title        = "Tor: The Second-Generation Onion Router",
+  author       = "Roger Dingledine, Nick Mathewson, Paul Syverson",
+  url={https://svn-archive.torproject.org/svn/projects/design-paper/tor-design.pdf},
+  urldate={2024-05-19},
+}
+
+@misc{anonym,
+  title        = "Anonymous Communication on the Internet",
+  author       = "Kaj J. Grahn, Thomas Forss, Göran Pulkkis",
+  howpublished = "\url{http://Proceedings.InformingScience.org/InSITE2014/InSITE14p103-120Grahn0483.pdf}",
+    urldate={2024-05-19},
+}
+
+
+
+@ARTICLE{Klein-Hennig2017-ia,
+  title     = "Zur{\"u}ck auf Los --- Die {IT-Sicherheit} zur{\"u}ck in der
+               Steinzeit",
+  author    = "Klein-Hennig, Martin and Schmidt, Felix",
+  journal   = "Datenschutz Datensicherheit - DuD",
+  publisher = "Springer Nature",
+  volume    =  41,
+  number    =  10,
+  pages     = "605--611",
+  month     =  oct,
+  year      =  2017
+}
+
 
 @misc{OpenVPN_KillSwitch,
     title={VPN Kill Switch for OpenVPN Connect Now Available},
